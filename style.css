@@ -20,11 +20,17 @@ header{
     max-width: 100%;
     /* padding-left: 100px; */
     height: 50px;
+    background-color: rgb(2, 31, 87);
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+ 
+ 
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 1000;
+     border-top: 3px solid #00c6ff;
+
 }
 
 header nav a{
@@ -39,13 +45,18 @@ header nav a{
 }
 
 a.active{
-    background: #14ff72cb;
-    border-radius: 2px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: #fff;
+   transition: 0.3s;
 }
 
 a:hover{
-    background: #14ff72cb;
-    border-radius: 2px;
+    /* background: #14ff72cb;
+    border-radius: 2px; */
+      color: #00c6ff;
+  transform: translateY(-2px);
 }
 
 /* Header section */
