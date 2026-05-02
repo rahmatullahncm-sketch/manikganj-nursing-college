@@ -25,6 +25,16 @@ document.querySelector('.services-btn').addEventListener('click', function(e) {
         dropdown.classList.toggle('show-dropdown');
     }
 });
+window.addEventListener('click', function(e) {
+    const dropdown = document.querySelector('.dropdown-content');
+    const servicesBtn = document.querySelector('.services-btn');
+
+    // চেক করবে ক্লিকটি সার্ভিস বাটন বা ড্রপডাউনের ভেতরে হয়েছে কি না
+    if (!servicesBtn.contains(e.target) && !dropdown.contains(e.target)) {
+        // যদি বাইরে ক্লিক হয়, তবে ড্রপডাউন বন্ধ করে দিবে
+        dropdown.classList.remove('show-dropdown');
+    }
+});
 let runTimeOut 
 
 let runNextAuto = setTimeout(() => {
