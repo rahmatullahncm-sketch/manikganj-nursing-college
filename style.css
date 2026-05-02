@@ -53,8 +53,10 @@ header{
     display: none; /* ডিফল্টভাবে ড্রপডাউন বন্ধ থাকবে */
     position: absolute;
     background-color: #0f4b86; /* আপনার নেভবারের কালার দিন */
-    min-width: 160px;
+    min-width: 40px;
+    /* min-height: 300px; */
     z-index: 1;
+    flex-direction: column;
         border-radius: 8px; /* কোণা গোল করার জন্য */
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* গভীরতা দেওয়ার জন্য */
     overflow: hidden; /* যাতে ভেতরের এলিমেন্টগুলো কোণা দিয়ে বেরিয়ে না যায় */
@@ -379,5 +381,35 @@ a:hover{
     /* মোবাইলে ক্লিক করলে ড্রপডাউন দেখানোর জন্য ক্লাস */
     .show-dropdown {
         display: block;
+        /* margin-top: 100px; */
     }
+
+    .dropdown-content {
+        display: flex; /* ফ্লেক্স ব্যবহার করছি */
+        flex-direction: column; /* আইটেমগুলো সিরিয়ালি নিচে নিচে আসবে */
+        max-height: 0; /* শুরুতে উচ্চতা ০ থাকবে */
+        overflow: hidden; /* ভেতরের লেখা দেখা যাবে না */
+        transition: max-height 0.4s ease-out, padding 0.3s ease; /* মসৃণ অ্যানিমেশন */
+        background-color: #001f3f; 
+        /* width: 100%; মোবাইলে পুরো চওড়া হবে */
+        position: -webkit-sticky; /* কন্টেন্টগুলোকে নিচে ঠেলে জায়গা করে নিবে */
+        /* margin-top: 50px; */
+    }
+
+    /* ক্লিক করার পর যখন এটি ওপেন হবে */
+    .show-dropdown {
+        max-height: 500px; /* একটি বড় উচ্চতা দিন যাতে সব আইটেম ধরে */
+        padding: 10px 0;
+        border-top: 2px solid #007bff;
+        margin-top: 100px;
+    }
+
+    /* ড্রপডাউনের ভেতরের প্রতিটি লিংক */
+    .dropdown-content a {
+        padding: 12px 20px;
+        text-align: left;
+        border-bottom: 1px solid rgba(5, 36, 137, 0.559); /* হালকা বর্ডার সিরিয়াল বোঝার জন্য */
+        width: 100%;
+        display: block; 
+     }
 }
