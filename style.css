@@ -65,6 +65,9 @@ header{
 .services-wrapper:hover .dropdown-content {
     display: block;
 }
+.services-wrapper, .services-btn {
+    display: none; 
+}
 header nav a{
     color: #fff;
     margin:0 auto;
@@ -370,7 +373,9 @@ a:hover{
     overflow: hidden; /* যাতে ভেতরের এলিমেন্টগুলো কোণা দিয়ে বেরিয়ে না যায় */
     border-top: 3px solid #007bff; /* মোবাইলে ড্রপডাউন নিচে নিচে আসবে */
     }
-
+    .services-wrapper, .services-btn {
+        display: block; /* মোবাইলে আবার দেখা যাবে */
+    }
     /* মোবাইলে ক্লিক করলে ড্রপডাউন দেখানোর জন্য ক্লাস */
     .show-dropdown {
         display: block;
