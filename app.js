@@ -5,8 +5,8 @@ var nextBtn = document.querySelector('.next'),
     item = document.querySelectorAll('.item'),
     runningTime = document.querySelector('.carousel .timeRunning') 
 
-let timeRunning = 3000 
-let timeAutoNext = 7000
+let timeRunning = 2000 
+let timeAutoNext = 4000
 
 nextBtn.onclick = function(){
     showSlider('next')
@@ -27,7 +27,7 @@ function resetTimeAnimation() {
     runningTime.style.animation = 'none'
     runningTime.offsetHeight /* trigger reflow */
     runningTime.style.animation = null 
-    runningTime.style.animation = 'runningTime 7s linear 1 forwards'
+    runningTime.style.animation = 'runningTime 4s linear 1 forwards'
 }
 
 

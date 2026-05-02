@@ -22,7 +22,7 @@ header{
     height: 50px;
     background-color: rgb(2, 31, 87);
      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
- 
+    /* clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); */
  
     display: flex;
     align-items: center;
@@ -33,6 +33,38 @@ header{
 
 }
 
+.mobile-only {
+    display: none;
+}
+
+/* ল্যাপটপের জন্য স্টাইল (যেমন আপনার ছবিতে আছে) */
+.nav-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.services-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; /* ডিফল্টভাবে ড্রপডাউন বন্ধ থাকবে */
+    position: absolute;
+    background-color: #0f4b86; /* আপনার নেভবারের কালার দিন */
+    min-width: 160px;
+    z-index: 1;
+        border-radius: 8px; /* কোণা গোল করার জন্য */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* গভীরতা দেওয়ার জন্য */
+    overflow: hidden; /* যাতে ভেতরের এলিমেন্টগুলো কোণা দিয়ে বেরিয়ে না যায় */
+    border-top: 3px solid #007bff; 
+}
+
+/* যখন মাউস Services এর ওপর যাবে (ল্যাপটপে) */
+.services-wrapper:hover .dropdown-content {
+    display: block;
+}
 header nav a{
     color: #fff;
     margin:0 auto;
@@ -320,5 +352,27 @@ a:hover{
     .content .btn button{
         padding: 10px 15px;
         font-size: 8px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .desktop-only {
+        display: none; /* মোবাইলে মেইন মেনু থেকে এগুলো মুছে যাবে */
+    }
+
+    .mobile-only {
+        display: block; /* এগুলো ড্রপডাউনের ভেতরে শো করবে */
+    }
+
+    .dropdown-content {
+        position: static; 
+            border-radius: 8px; /* কোণা গোল করার জন্য */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2); /* গভীরতা দেওয়ার জন্য */
+    overflow: hidden; /* যাতে ভেতরের এলিমেন্টগুলো কোণা দিয়ে বেরিয়ে না যায় */
+    border-top: 3px solid #007bff; /* মোবাইলে ড্রপডাউন নিচে নিচে আসবে */
+    }
+
+    /* মোবাইলে ক্লিক করলে ড্রপডাউন দেখানোর জন্য ক্লাস */
+    .show-dropdown {
+        display: block;
     }
 }
