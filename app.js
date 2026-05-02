@@ -1,4 +1,5 @@
 var nextBtn = document.querySelector('.next'),
+    servicesbtn = document.querySelector('.services-btn'),
     prevBtn = document.querySelector('.prev'),
     carousel = document.querySelector('.carousel'),
     list = document.querySelector('.list'), 
@@ -16,11 +17,11 @@ prevBtn.onclick = function(){
     showSlider('prev')
 }
 document.querySelector('.services-btn').addEventListener('click', function(e) {
-    // এটি অন্য পেজে যাওয়া বন্ধ করবে
     e.preventDefault(); 
     
     if (window.innerWidth <= 768) {
-        const dropdown = this.nextElementSibling;
+        // nextElementSibling এর বদলে সরাসরি ক্লাস দিয়ে খুঁজুন
+        const dropdown = document.querySelector('.dropdown-content');
         dropdown.classList.toggle('show-dropdown');
     }
 });
