@@ -15,7 +15,15 @@ nextBtn.onclick = function(){
 prevBtn.onclick = function(){
     showSlider('prev')
 }
-
+document.querySelector('.services-btn').addEventListener('click', function(e) {
+    // এটি অন্য পেজে যাওয়া বন্ধ করবে
+    e.preventDefault(); 
+    
+    if (window.innerWidth <= 768) {
+        const dropdown = this.nextElementSibling;
+        dropdown.classList.toggle('show-dropdown');
+    }
+});
 let runTimeOut 
 
 let runNextAuto = setTimeout(() => {
