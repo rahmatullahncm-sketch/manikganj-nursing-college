@@ -104,7 +104,16 @@ a:hover{
 /* Header section */
 
 
-
+.overlay{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    /* overflow: hidden; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: -50% -50%;
+    margin-top: 300px;
+}
 /* carousel */
 
 .carousel{
